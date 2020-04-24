@@ -8,8 +8,4 @@ jobs:
     steps:
     - name: trigger single Job
       uses: appleboy/jenkins-action@master
-      with:
-        url: "http://40.121.143.45:8080/"
-        user: "mmeera"
-        token: ${{ secrets.TOKEN }}
-        job: "nsecureBank-CSF-OS"
+     
