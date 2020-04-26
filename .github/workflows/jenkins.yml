@@ -1,11 +1,11 @@
 name: trigger jenkins job
 on: [push]
 jobs:
-
-  build:
-    name: Build
+  curl:
     runs-on: ubuntu-latest
     steps:
-    - name: trigger single Job
-      uses: appleboy/jenkins-action@master
-     
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://www.google.com/get
+
