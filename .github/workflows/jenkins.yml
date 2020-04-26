@@ -7,5 +7,5 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: https://www.google.com/get
+        args: www.google.com/get
 
