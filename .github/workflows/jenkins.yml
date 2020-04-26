@@ -7,5 +7,5 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: http://40.121.143.45:8080/job/InsecureBank-CSF-OS/build?token=119735b21b613de55a85b0a9edd8b09f9d
+        args: --trace-ascii debugdump.txt http://www.example.com/
 
