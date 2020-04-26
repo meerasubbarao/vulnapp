@@ -7,5 +7,5 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: www.google.com/get
+        args: --trace-ascii debugdump.txt http://www.example.com/
 
