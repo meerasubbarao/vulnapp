@@ -13,7 +13,7 @@ application:
   sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
   sensitivePackagePattern: .*(\+\+\+.*(com\/scalesec\/vulnado)).*
   fileChangeThreshold: 5
-  release: major
+  release: minor
 environment:
   scm: github
   scmOwner: meerasubbarao
