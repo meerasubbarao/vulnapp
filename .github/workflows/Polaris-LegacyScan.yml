@@ -23,7 +23,7 @@ jobs:
       if: ${{ github.event_name == 'pull_request' }}
        
     - name: Static Analysis with Polaris Action
-      uses: devsecops-test/polaris-action@v1-beta.10
+      uses: devsecops-test/polaris-action@v1
       with:
         polarisServerUrl: ${{secrets.POLARIS_SERVER_URL}}
         polarisAccessToken: ${{secrets.POLARIS_ACCESS_TOKEN}}
