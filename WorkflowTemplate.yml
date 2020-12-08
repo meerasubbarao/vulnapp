@@ -73,6 +73,6 @@ tool_information:
 - tool_name: blackduck
   enabled: <<IS_SCA_ENABLED>>
   fields:
-    project_name: Vulnado:1.0.1
+    project_name: vulnado:1.0
     instance_url: <<BLACKDUCK_SERVER_URL>>
     auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
