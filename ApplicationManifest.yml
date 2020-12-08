@@ -9,7 +9,7 @@ application:
   projectLanguage: Java
   platformVersion: Java 8
   buildSystem: Maven
-  riskMatrixRevision: Rev2.0
+  riskMatrixRevision: Rev1.0
   sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
   sensitivePackagePattern: .*(\+\+\+.*(com\/scalesec\/vulnado)).*
   fileChangeThreshold: 5
