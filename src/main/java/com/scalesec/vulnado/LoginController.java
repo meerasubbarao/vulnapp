@@ -18,6 +18,9 @@ public class LoginController {
   @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
   LoginResponse login(@RequestBody LoginRequest input) {
     User user = User.fetch(input.username);
+    System.out.println(input.username);
+    System.out.println(input.password);
+    System.out.println(user.hashedPassword);
     if (Postgres.md5(input.password).equals(user.hashedPassword)) {
       return new LoginResponse(user.token(secret));
     } else {
