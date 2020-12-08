@@ -8,4 +8,4 @@ security:
       rescanThreshold: 5
     sca:
       enabled: false
-      rescanThreshold: 0
+      rescanThreshold: 5
