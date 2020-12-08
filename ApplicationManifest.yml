@@ -1,0 +1,27 @@
+application:
+  appId: TESTAPP
+  assetId: TESTAPP
+  sdlcType: EDM
+  appType: Webapp
+  webservice: true
+  restApi: true
+  microservice: false
+  projectLanguage: Java
+  platformVersion: Java 8
+  buildSystem: Maven
+  riskMatrixRevision: Rev1.0
+  sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
+  sensitivePackagePattern: .*(\+\+\+.*(com\/scalesec\/vulnado)).*
+  fileChangeThreshold: 5
+  release: major
+environment:
+  scm: github
+  scmOwner: meerasubbarao
+  scmRepositoryName: vulnapp
+  scmBranchName: master
+  githubApiUrl: https://api.github.com/repos/
+  jiraProjectName: <<JIRA_PROJECT_NAME>>
+  jiraIssuesQuery: <<JIRA_ISSUES_QUERY>>
+  jiraApiUrl: <<JIRA_API_URL>>
+  jiraUserName: <<JIRA_USERNAME>>
+  jiraAuthToken: <<JIRA_AUTH_TOKEN>>
