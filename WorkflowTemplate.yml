@@ -22,8 +22,8 @@ connectors:
 - connector_name: github
   fields:
     file_path: workflowengine-results.sarif.json
-    owner_name: sig-devsecops
-    repository_name: insecure-bank
+    owner_name: meerasubbarao
+    repository_name: vulnapp
     ref: refs/heads/master
     commit_id: <<GITHUB_COMMIT_ID>>
     username: <<GITHUB_USERNAME>>
@@ -67,12 +67,12 @@ tool_information:
 - tool_name: polaris
   enabled: <<IS_SAST_ENABLED>>
   fields:
-    project_name: sig-devsecops/insecure-bank
+    project_name: snehakokil/vulnado-sample
     instance_url: <<POLARIS_SERVER_URL>>
     auth_token: <<POLARIS_ACCESS_TOKEN>>
 - tool_name: blackduck
   enabled: <<IS_SCA_ENABLED>>
   fields:
-    project_name: insecure-bank:1.0.1
+    project_name: Vulnado:1.0.1
     instance_url: <<BLACKDUCK_SERVER_URL>>
     auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
