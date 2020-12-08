@@ -3,6 +3,7 @@ application:
   assetId: TESTAPP
   sdlcType: EDM
   appType: Webapp
+  appName: Vulnapp
   webservice: true
   restApi: true
   microservice: false
