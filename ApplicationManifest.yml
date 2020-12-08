@@ -19,7 +19,6 @@ environment:
   scmOwner: meerasubbarao
   scmRepositoryName: vulnapp
   scmBranchName: master
-  githubApiUrl: https://api.github.com/repos/
   testDeploymentRoot: "vulnapp"
   imChannelIdentifier: "C015LGE7RRQ"
   imChannel: "slack"
