@@ -1,0 +1,11 @@
+security:
+  pipeline:
+    type: "Inline"
+    toolchain: "Synopsys"
+  activities:
+    sast:
+      enabled: false
+      rescanThreshold: 5
+    sca:
+      enabled: false
+      rescanThreshold: 5
