@@ -39,11 +39,17 @@ jobs:
     - name: Static Analysis with Polaris
       if: ${{steps.prescription.outputs.sastScan == 'true' }}
       run: |
+          URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files"
+          FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
+          echo $FILES | tr " " "\n" > polaris-files-to-scan.txt
+          echo "Files Changed -->"
+          cat polaris-files-to-scan.txt
           export POLARIS_SERVER_URL=${{ secrets.POLARIS_SERVER_URL}}
           export POLARIS_ACCESS_TOKEN=${{ secrets.POLARIS_ACCESS_TOKEN}}
+          export POLARIS_FF_ENABLE_COVERITY_INCREMENTAL=true
           wget -q ${{ secrets.POLARIS_SERVER_URL}}/api/tools/polaris_cli-linux64.zip
           unzip -j polaris_cli-linux64.zip -d /tmp
-          /tmp/polaris analyze -w
+          /tmp/polaris analyze -w --coverity-ignore-capture-failure --incremental polaris-files-to-scan.txt | tee polaris-output.txt
     
     # Please note that the ID in previous step was set to prescription
     # in order for this logic to work
