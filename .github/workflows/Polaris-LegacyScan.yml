@@ -27,7 +27,7 @@ jobs:
       with:
         polarisServerUrl: ${{secrets.POLARIS_SERVER_URL}}
         polarisAccessToken: ${{secrets.POLARIS_ACCESS_TOKEN}}
-        polarisProjectName: sig-devsecops/github-io-sample
+        polarisProjectName: meerasubbarao/vulnapp
  
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
