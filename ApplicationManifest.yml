@@ -28,3 +28,6 @@ environment:
   imChannel: "slack"
   jiraProjectName: "DEM"
   jiraIssuesQuery: "resolution = \"Unresolved\" AND labels in (Security, Defect)"
+  jiraApiUrl: <<JIRA_API_URL>>
+  jiraUserName: <<JIRA_USERNAME>>
+  jiraAuthToken: <<JIRA_AUTH_TOKEN>>
