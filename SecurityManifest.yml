@@ -17,6 +17,5 @@ security:
       rescanThreshold: 30
     dastplusm:
       rescanThreshold: 30
-    imageScan:
-      rescanThreshold: 10
+    
   
