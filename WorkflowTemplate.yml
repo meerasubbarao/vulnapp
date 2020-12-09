@@ -60,7 +60,7 @@ tool_information:
 - tool_name: polaris
   enabled: <<IS_SAST_ENABLED>>
   fields:
-    project_name: snehakokil/vulnado-sample
+    project_name: smeerasubbarao/vulnapp
     instance_url: <<POLARIS_SERVER_URL>>
     auth_token: <<POLARIS_ACCESS_TOKEN>>
 - tool_name: blackduck
