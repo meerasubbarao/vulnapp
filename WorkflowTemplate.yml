@@ -12,13 +12,6 @@ connectors:
     url: <<JIRA_SERVER_URL>>
     username: <<JIRA_USERNAME>>
     authtoken: <<JIRA_AUTH_TOKEN>>
-- connector_name: bitbucket
-  fields:
-    workspace_name: sig-devsecops
-    repository_name: insecure-bank
-    commit_id: <<BITBUCKET_COMMIT_ID>>
-    username: <<BITBUCKET_USERNAME>>
-    app_password: <<BITBUCKET_PASSWORD>>
 - connector_name: github
   fields:
     file_path: workflowengine-results.sarif.json
