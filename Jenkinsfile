@@ -1,3 +1,3 @@
 @Library('Stargazer-Lib@development')
 import com.demo.*
-new pipeline.EntryPoint().execute('ApplicationManifest.yml', 'SecurityManifest.yml')
+new pipeline.EntryPoint().execute('IO-ApplicationManifest.yml', 'IO-SecurityManifest.yml')
