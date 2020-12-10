@@ -2,7 +2,7 @@
 security:
   pipeline:
     type: "Inline"
-    toolchain: "OpsnSource"
+    toolchain: "OpenSource"
   activities:
     sast:
       enabled: false
