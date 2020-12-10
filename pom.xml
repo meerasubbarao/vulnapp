@@ -77,7 +77,7 @@
 			<!-- SpotBugs Static Analysis -->
 			<plugin>
 			    <groupId>com.github.spotbugs</groupId>
-			    <artifactId>spotbugs-maven-plugin</artifactId>
+			    <artifactId>spotbugs</artifactId>
 			    <version>4.2.0</version>
 			    <configuration>
 				<effort>Max</effort>
