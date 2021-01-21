@@ -50,7 +50,7 @@ connectors:
 - connector_name: jira
   fields:
     issuetype: Bug
-    projectkey: JIRA_PROJECT_KEY
+    projectkey: DEM
     assignee: JIRA_ASSIGNEE
     url: JIRA_SERVER_URL
     username: JIRA_USERNAME
