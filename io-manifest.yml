@@ -1,0 +1,95 @@
+application:
+  appId: vulnapp
+  assetId: vulnapp
+  appName: VulnApp
+  appType: Webapp
+  microservice: false
+  projectLanguage: Java
+  platformVersion: Java 8
+  buildSystem: Maven
+  riskMatrixRevision: Rev2.0
+  sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
+  sensitivePackagePattern: ".*(\\+\\+\\+.*(com\\/scalesec\\/vulnado)).*"
+  fileChangeThreshold: 5
+environment:
+  scm: github
+  scmOwner: meerasubbarao
+  scmRepositoryName: vulnapp
+  scmBranchName: master
+  githubApiUrl: https://api.github.com/repos/
+  jiraProjectName: DEM
+  jiraIssuesQuery: resolution=Unresolved AND labels in (Security, Defect)
+  jiraApiUrl: JIRA_API_URL
+  jiraUserName: JIRA_USERNAME
+  jiraAuthToken: JIRA_AUTH_TOKEN
+  testDeploymentRoot: "vulnapp"
+security:
+  pipeline:
+    toolchain: "Synopsys"
+  activities:
+    sast:
+      enabled: false
+      rescanThreshold: 0
+    sca:
+      enabled: false
+      rescanThreshold: 10
+    dast:
+      enabled: false
+      rescanThreshold: 10
+    sastplusm:
+      rescanThreshold: 30
+    dastplusm:
+      rescanThreshold: 30
+    imageScan:
+      rescanThreshold: 10
+connectors:
+- connector_name: slack
+  fields:
+    channelidentifier: SLACK_CHANNEL_ID
+    bearertoken: SLACK_TOKEN
+- connector_name: jira
+  fields:
+    issuetype: Bug
+    projectkey: JIRA_PROJECT_KEY
+    assignee: JIRA_ASSIGNEE
+    url: JIRA_SERVER_URL
+    username: JIRA_USERNAME
+    authtoken: JIRA_AUTH_TOKEN
+buildbreaker:
+- activityname: sast
+  status:
+  - new
+  - open
+  overallseverity:
+  - high
+  categories:
+  - name: cross-site scripting
+    severity: high
+  - name: sql injection
+    severity: high
+- activityname: sca
+  status:
+  - new
+  overallseverity:
+  - high
+  categories:
+  - name: cve-2015-2119
+    severity: medium
+# for WF client
+tool_information:
+- tool_name: coverity
+  enabled: false
+  fields:
+    file_path: FILE_PATH
+- tool_name: polaris
+  enabled: false
+  fields:
+    project_name: POLARIS_PROJECT_NAME
+    instance_url: POLARIS_SERVER_URL
+    auth_token: POLARIS_ACCESS_TOKEN
+- tool_name: blackduck
+  enabled: false
+  fields:
+    project_name: BLACKDUCK_PROJECT_NAME
+    instance_url: BLACKDUCK_SERVER_URL
+    auth_token: BLACKDUCK_ACCESS_TOKEN
