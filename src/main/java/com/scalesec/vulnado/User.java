@@ -45,8 +45,10 @@ public class User {
       System.out.println("Opened database successfully");
 
       String query = "select * from users where username = '" + un + "' limit 1";
+      String query2 = "select * from users where password = '" + un + "' limit 1";
       System.out.println(query);
       ResultSet rs = stmt.executeQuery(query);
+      ResultSet rs2 = stmt.executeQuery(query2);
       if (rs.next()) {
         String user_id = rs.getString("user_id");
         String username = rs.getString("username");
